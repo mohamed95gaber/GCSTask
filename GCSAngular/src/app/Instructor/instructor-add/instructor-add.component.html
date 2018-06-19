@@ -1,0 +1,47 @@
+<div class="modal fade" id="addmodal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Instructor</h4>
+      </div>
+      <br/> 
+      <form #f="ngForm" novalidate>
+        <div class="form-group x">
+          <label class="control-label t">Instructor Name:</label>
+          <input type="text" class="form-control s" name="Name" [(ngModel)]="Name" placeholder="Instructor name">
+        </div>
+        <div class="form-group x">
+          <label class="control-label t">Phone</label>
+          <input type="phone" class="form-control s" name="Phone" [(ngModel)]="Phone" placeholder="phone number">
+        </div>
+        <div class="form-group x">
+          <label class="control-label t">Mail</label>
+          <input type="mail" class="form-control s" name="Mail" [(ngModel)]="Mail" placeholder="name@mail.com">
+        </div>
+        <div class="form-group x">
+          <label class="control-label t">Department:</label>
+          <input type="text" class="form-control s" name="Dept" [(ngModel)]="Dept" placeholder="Department">
+        </div>
+        <div class="form-group">
+            <p class="zz f">Courses</p>
+            <p class="clear"></p>
+          </div>   
+          
+          <select class="col-xs-4 z b" multiple name="CoursesId" [(ngModel)]="CoursesId"size="6">
+              <option class="f" name="Id" [value]="course.Id" *ngFor="let course of courses">{{course.Name}}</option> 
+            </select>
+            
+<p class="clear"></p>
+
+
+      </form>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="addInstructor(f)" data-dismiss="modal">Add Instructor</button>
+        <button type="button" class="btn btn-default" (click)="cancel()" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  
+  </div>
+ 
+</div>

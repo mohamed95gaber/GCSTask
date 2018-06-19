@@ -1,0 +1,30 @@
+.s{
+    width:80%;
+    margin-left:10%;
+}
+
+.t{
+    padding-left: 10%;
+}
+
+.z{
+    float: left;
+    margin-left: 10%; 
+}
+.zz{
+    float: left;
+    margin-left: 15%; 
+}
+.y{
+  float:right;
+  padding-right: 25%;
+}
+.f{
+    font-size: 20px;
+}
+.clear{
+    clear: both;
+}
+.b{
+    margin-bottom: 10%;
+}

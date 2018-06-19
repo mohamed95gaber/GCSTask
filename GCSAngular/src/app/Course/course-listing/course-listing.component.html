@@ -1,0 +1,50 @@
+<br/>
+<br/>
+<br/>
+
+<div class="col-xs-11">
+  <p class="f">Courses List</p>
+  <hr>
+  <a  data-toggle="modal" data-target="#addmodal">
+    <i class="fa fa-plus r"></i>
+  </a>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Course Name</th>
+        <th scope="col">Course Code</th>        
+        <th scope="col">Hours</th>
+
+        
+        <th scope="col">Admin Controls</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of courses" >
+        <td>{{course.Name}}</td>
+        <td>{{course.Code}}</td>        
+        <td>{{course.Hours}}</td>
+        
+        <td>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <a  data-toggle="modal" data-target="#editmodal"  (click)="edit(course.Id)">
+            <i class="fa fa-edit"></i>
+          </a>&nbsp;
+          <a  (click)="delete(course.Id)">
+            <i class="fa fa-trash"></i>
+          </a>&nbsp;
+          <a  (click)="details(course.Id)" data-toggle="modal" data-target="#detailsmodal">
+              <i class="fa fa-info-circle"></i>
+            </a>
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<app-course-edit (uptCourse)="editData($event)"  [course]="course"></app-course-edit>
+<app-course-add (newCourse)="add($event)"></app-course-add>
+<app-course-details [course]="course"></app-course-details>

@@ -1,0 +1,52 @@
+<div class="modal fade" id="addmodal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Student</h4>
+      </div>
+      <br/>
+      <form #f="ngForm" novalidate>
+        <div class="form-group x">
+          <label class="control-label t">Student Name:</label>
+          <input type="text" class="form-control s" name="Name" [(ngModel)]="Name" placeholder="student name">
+        </div>
+        <div class="form-group x">
+          <label class="control-label t">Phone:</label>
+          <input type="phone" class="form-control s" name="Phone" [(ngModel)]="Phone" placeholder="Phone number">
+        </div>
+        <div class="form-group x">
+          <label class="control-label t">Mail :</label>
+          <input type="mail" class="form-control s" name="Mail" [(ngModel)]="Mail" placeholder="username@mail.com">
+        </div>
+        <div class="form-group x">
+          <label class="control-label t">BirthDate:</label>
+          <input type="date" class="form-control s" name="Birthdate" [(ngModel)]="Birthdate" placeholder="Birthdate">
+        </div>
+        <div class="form-group">
+          <p class="zz f">Instructors</p>
+          <p class=" f y">Courses</p>
+          <p class="clear"></p>
+        </div>
+
+        <select class="col-xs-4 z b" multiple name="instructorsId" [(ngModel)]="instructorsId" size="6">
+          <option class="f" name="Id" [value]="instructor.Id" *ngFor="let instructor of instructors">{{instructor.Name}}</option>
+        </select>
+
+        <select class="col-xs-4 z b" multiple name="coursesId" [(ngModel)]="coursesId" size="6">
+          <option class="f" name="Id" [value]="course.Id" *ngFor="let course of courses">{{course.Name}}</option>
+        </select>
+
+
+
+      </form>
+      <p class="clear"> select Multi Instructors teach and Students enrolled in this course CTRL+R </p>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="addStudent(f)" data-dismiss="modal">Add Student</button>
+        <button type="button" class="btn btn-default" (click)="cancel()" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>

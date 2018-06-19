@@ -1,0 +1,28 @@
+<div class="modal fade" id="detailsmodal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{student.Name}} course</h4>
+      </div>
+     <div>
+        <h4 class="s"> Preferred Instructors </h4>
+        <ol class="s">
+          <li *ngFor="let name of student.InstructorsName">{{name}}</li>
+        </ol>
+     </div>
+     <hr/>
+     <div>
+      <h4 class="s">Preferred Courses </h4>
+      <ol class="s">
+        <li *ngFor="let name of student.CoursesName">{{name}}</li>
+      </ol>
+   </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="ok()" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>

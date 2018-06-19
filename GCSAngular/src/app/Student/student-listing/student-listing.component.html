@@ -1,0 +1,48 @@
+<br/>
+<br/>
+<br/>
+
+<div class="col-xs-11">
+  <p class="f">Students List</p>
+  <hr>
+  <a  data-toggle="modal" data-target="#addmodal">
+    <i class="fa fa-plus r"></i>
+  </a>
+  <table class="table table-striped">
+    <thead>
+      <tr>   
+        <th scope="col">Student Name</th>
+        <th scope="col">Student Phone</th>        
+        <th scope="col">Student Mail</th>
+        <th scope="col"> BirthDate</th>                          
+        <th scope="col">Admin Controls</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{student.Name}}</td>
+        <td>{{student.Phone}}</td>        
+        <td>{{student.Mail}}</td>
+        <td>{{student.Birthdate}}</td>
+        <td>
+          &nbsp;
+          <a  data-toggle="modal" data-target="#editmodal" href="#" (click)="edit(student.Id)">
+            <i class="fa fa-edit"></i>
+          </a>&nbsp;
+          <a  (click)="delete(student.Id)">
+            <i class="fa fa-trash"></i>
+          </a>&nbsp;
+          <a data-toggle="modal" data-target="#detailsmodal" (click)="details(student.Id)">
+              <i class="fa fa-info-circle"></i>
+            </a>
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<app-student-edit (uptstudent)="editData($event)"  [student]="student"></app-student-edit>
+<app-student-add (newStudent)="add($event)"></app-student-add>
+<app-student-details [student]="student"></app-student-details>

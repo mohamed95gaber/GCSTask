@@ -1,0 +1,49 @@
+<br/>
+<br/>
+<br/>
+
+<div class="col-xs-11">
+  <p class="f">Instructors List</p>
+  <hr>
+  <a  data-toggle="modal" data-target="#addmodal">
+    <i class="fa fa-plus r"></i>
+  </a>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Instructor Name</th>
+        <th scope="col">Instructor Phone</th>        
+        <th scope="col">Instructor Mail</th>
+        <th scope="col"> Department</th>                 
+        <th scope="col">Admin Controls</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let instructor of instructors">
+        <td>{{instructor.Name}}</td>
+        <td>{{instructor.Phone}}</td>        
+        <td>{{instructor.Mail}}</td>
+        <td>{{instructor.Dept}}</td>
+        
+        <td>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <a  data-toggle="modal" data-target="#editmodal" href="#" (click)="edit(instructor.Id)">
+            <i class="fa fa-edit"></i>
+          </a>&nbsp;
+          <a  (click)="delete(instructor.Id)">
+            <i class="fa fa-trash"></i>
+          </a>&nbsp;
+          <a data-toggle="modal" data-target="#detailsmodal"  (click)="details(instructor.Id)">
+              <i class="fa fa-info-circle"></i>
+            </a>
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<app-instructor-edit (uptinstructor)="editData($event)"  [instructor]="instructor"></app-instructor-edit>
+<app-instructor-add (newInstructor)="add($event)"></app-instructor-add>
+<app-instructor-details [instructor]="instructor"></app-instructor-details>

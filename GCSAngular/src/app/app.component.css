@@ -1,0 +1,16 @@
+.t{
+    background-color:gainsboro;
+    height:660px;
+ 
+}
+.x{
+    text-align: center;
+    padding-top: 35%;
+    
+    font-size: 150%;
+}
+a{
+    text-decoration:none;
+    color:brown;
+    cursor: pointer;
+}

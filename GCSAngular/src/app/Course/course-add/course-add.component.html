@@ -1,0 +1,47 @@
+<div class="modal fade" id="addmodal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Course</h4>
+      </div>
+      <br/>
+      <form #f="ngForm"  novalidate>
+        <div class="form-group x">
+          <label class="control-label t">Course Name:</label>
+          <input type="text" class="form-control s" name="Name" [(ngModel)]="Name" placeholder="Course name">
+        </div>
+
+        <div class="form-group x">
+          <label class="control-label t">Course Code</label>
+          <input type="number" class="form-control s" name="Code" [(ngModel)]="Code" placeholder="Course Code">
+        </div>
+        <div class="form-group x">
+          <label class="control-label t">No .Of Hourse</label>
+          <input type="number" class="form-control s" name="Hours" [(ngModel)]="Hours" placeholder="No .Of Hours">
+        </div>
+        <div class="form-group">
+          <p class="zz f">Instructors</p>
+          <p class=" f y">Students</p>
+          <p class="clear"></p>
+        </div>   
+        
+        <select class="col-xs-4 z b" multiple name="instructorsId" [(ngModel)]="instructorsId"size="6">
+            <option class="f" name="Id" [value]="instructor.Id" *ngFor="let instructor of instructors">{{instructor.Name}}</option> 
+          </select>
+          
+        <select class="col-xs-4 z b" multiple name="studentsId" [(ngModel)]="studentsId" size="6">
+          <option class="f" name="Id" [value]="student.Id" *ngFor="let student of students">{{student.Name}}</option> 
+        </select>
+      
+
+      </form>
+     <p class="clear"> select Multi Instructors teach and Students enrolled in this course CTRL+R </p>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="addCourse(f)" data-dismiss="modal">Add Course</button>
+        <button type="button" class="btn btn-default" (click)="cancel()" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
